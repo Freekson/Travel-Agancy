@@ -1,0 +1,2 @@
+//code heare
+"use strict";
