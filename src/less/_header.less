@@ -1,0 +1,57 @@
+@import url(./function.less);
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    margin: 0 15%;
+    width: 70%;
+    color: white;
+    height: 73px;
+    .header__logo{
+        font-weight: 600;
+        font-size: 2.1rem;
+    }
+    .header__navigation{
+        display: flex;
+        align-items: center;
+        flex-basis: 50%;
+        .nav{
+            margin-right: 2%;
+            width: 100%;
+            ul{
+                list-style: none;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                height: 73px;
+                display: flex;
+                align-items: center;
+                li{
+                    a{    
+                        margin: 0 1rem;
+                        color: white;
+                        font-weight: 600;
+                        .hover-link({
+                            text-decoration: underline;
+                        });
+                    }
+                }
+            }
+        }
+        .header__singup-btn{
+            a{
+                text-decoration: none;
+                color: black;
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 160px;
+                height: 56px;
+                background-color: #FFC814;
+                border-radius: 5px;
+            }   
+        }
+    }
+}
