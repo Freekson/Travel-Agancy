@@ -130,3 +130,87 @@ let element = {
 };
 let getElementHeight = element.getHeight();
 console.log(getElementHeight);
+
+//7
+function minus(x = 0) {
+	return function(y = 0){
+  	console.log(x-y);
+    return x-y;
+  };
+}
+minus()();
+
+//8
+function multiplyMaker(x) {
+	let num = x;
+	return function(y){
+    return (num*=y);
+  };
+}
+const multiply = multiplyMaker(2);
+console.log(multiply(2));
+console.log(multiply(1));
+console.log(multiply(3));
+console.log(multiply(10));
+
+//9
+
+function Modul(x) {
+	let str = x;
+	return {
+  	addStr(value) {
+    	if(typeof value === 'number'){
+      	str = String(value);
+      }
+      if (value === ''){
+       	str = '';
+      }
+      if(typeof value === 'string'){
+      	str = value;
+      }
+      return str;
+    },
+    viewStr() {
+    	console.log(str);
+    },
+    lenStr() {
+    	console.log(str.length);
+    },
+    backStr() {
+    	console.log(str.split("").reverse().join(""));
+    }
+  }
+}
+const mod = Modul();
+mod.addStr('abcde');
+mod.viewStr();
+mod.lenStr();
+mod.backStr();
+
+//10
+function setValue(x) {
+	let num = x;
+	return {
+  	add(value) {
+    	num += value;
+    },
+    min(value) {
+    	num -= value;
+    },
+    mult(value) {
+    	num *= value;
+    },
+    div(value) {
+    	num /= value;
+    },
+    val() {
+    	console.log(num);
+    }
+  }
+}
+const mod = setValue(10);
+mod.add(5);
+mod.min(3);
+mod.div(2);
+mod.mult(10);
+mod.val();
