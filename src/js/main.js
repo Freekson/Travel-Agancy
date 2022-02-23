@@ -214,3 +214,67 @@ mod.min(3);
 mod.div(2);
 mod.mult(10);
 mod.val();
+
+//11
+function foo(x, ...others) {
+	let obj= {
+  	firstEl: x,
+    others: others
+  }
+	console.log(obj);
+	return obj;
+}
+foo('a', 'b', 'c', 'd');
+
+//12
+const organisation = {
+	name: 'Google',
+	info: { 
+  	employees: ['Vlad', 'Olga'],
+  	partners: ['Microsoft', 'Facebook', 'Xig']
+  }
+};
+function getInfo({name, info: {partners:[first, second, ...others]} = {}} = {}) {
+	console.log('Name: ' + name);
+  console.log('Partners: ' + first + ', ' + second);
+}
+getInfo(organisation);
+
+//13
+let user = {
+    guid: "dd969d30-841d-436e-9550-3b0c649e4d34",
+    isActive: false,
+    balance: "$2,474.46",
+    age: 30,
+    eyeColor: "blue",
+    name: "Tameka Maxwell",
+    gender: "female",
+    company: "ENOMEN",
+    email: "tamekamaxwell@enomen.com",
+    phone: "+1 (902) 557-3898",
+    tags: [
+      "aliquip",
+      "anim",
+      "exercitation",
+      "non",
+    ],
+    friends: [
+      {
+        id: 0,
+        name: "Barber Hicks"
+      },
+      {
+        id: 1,
+        name: "Santana Cruz"
+      },
+      {
+        id: 2,
+        name: "Leola Cabrera"
+      }
+    ],
+  };
+
+//const {name, balance, email, tags:[first, , ,last], friends:[{id, name:frName} ={}]} = user;
+//console.log(name, balance, email, first, last, frName);
+const { guid, isActive, balance, age, eyeColor, name, gender, company, email, phone, ...others} = user;
+console.log(others);
